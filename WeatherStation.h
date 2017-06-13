@@ -11,6 +11,8 @@
 #include "PressureSensorCreator.h"
 #include "TemperatureSensorCreator.h"
 
+#include "Explode.h"
+
 class WeatherStation
 {
 public:
@@ -18,12 +20,17 @@ public:
 	~WeatherStation();
 
 	void AddSensor(std::string sensor, std::string params);
+	void AddPort(std::string port, std::string params);
+	std::string MeasureSensor(std::string id);
+	void ExecuteCommand(std::string command);
+
 private:
 	std::map<std::string, PortCreator*> portCreators;
-	std::vector<Sensor*> sensors;
 	std::map<std::string, SensorCreator*> sensorCreators;
 
+	std::vector<Port*> ports;
+	std::vector<Sensor*> sensors;
+	
 	void RegisterPortCreator(PortCreator* creator);
 	void RegisterSensorCreator(SensorCreator* creator);
 };
-

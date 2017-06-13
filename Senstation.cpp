@@ -7,15 +7,17 @@
 #include <iostream>
 #include "TemperatureSensor.h"
 #include "TemperatureSensorCreator.h"
+#include "DoubleResult.h"
+#include "WeatherStation.h"
 using namespace std;
 
 
 int main()
 {
-	Sensor *s;
-	TemperatureSensorCreator cr;
-	s = cr.Create("aa");
-	cout << s->Id();
+	WeatherStation ws;
+	ws.ExecuteCommand("addPort OneWirePort 14 mojport");
+	ws.ExecuteCommand("addSensor PressureSensor 10 kuchnia 14");
+	ws.ExecuteCommand("measureSensor 10");
 	getchar();
     return 0;
 }

@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+#include <vector>
+#include "Explode.h"
 #include "SensorCreator.h"
 #include "PressureSensor.h"
 
@@ -9,7 +12,7 @@ public:
 	PressureSensorCreator();
 	~PressureSensorCreator();
 
-	Sensor* Create(std::string params) override;
+	PressureSensor* Create(std::vector<Port*> ports, std::string params) override;
 	std::string Creates() const override;
 };
 

@@ -11,9 +11,17 @@ OneWirePortCreator::~OneWirePortCreator()
 {
 }
 
-Port * OneWirePortCreator::Create(std::string params)
+OneWirePort * OneWirePortCreator::Create(std::string params)
 {
-	return new OneWirePort(123, "abc abc ow");
+	OneWirePort* res = nullptr;
+	std::vector<std::string> v{ explode(params, ' ') };
+
+	if (v.size() == 2)
+	{
+		res = new OneWirePort(std::stoi(v[0]), v[1]);
+	}
+
+	return res;
 }
 
 std::string OneWirePortCreator::Creates() const
