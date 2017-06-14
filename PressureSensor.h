@@ -13,9 +13,6 @@ public:
 	~PressureSensor();
 
 	std::string Signature() const override;
-	DoubleResult* Measure() override;
-	DoubleResult* GetValue() override;
-
-protected:
-	DoubleResult* value;
+	Result* Measure() override;
+	Result* GetValue() override;
 };

@@ -17,14 +17,14 @@ std::string TemperatureSensor::Signature() const
 	return "TemperatureSensor";
 }
 
-DoubleResult * TemperatureSensor::Measure()
+Result * TemperatureSensor::Measure()
 {
 	srand(time(NULL));
 	value->Randomize(-40.0, 40.0);
 	return value;
 }
 
-DoubleResult * TemperatureSensor::GetValue()
+Result * TemperatureSensor::GetValue()
 {
 	return value;
 }

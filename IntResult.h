@@ -13,7 +13,7 @@ public:
 
 	std::string ToString() const override;
 	void Update(int value);
-	void Randomize(int min, int max);
+	void Randomize(double min, double max) override;
 
 protected:
 	int value;

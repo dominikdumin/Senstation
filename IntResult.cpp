@@ -21,7 +21,7 @@ void IntResult::Update(int value)
 	this->value = value;
 }
 
-void IntResult::Randomize(int min, int max)
+void IntResult::Randomize(double min, double max)
 {
 	if (min < max)
 	{

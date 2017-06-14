@@ -24,4 +24,5 @@ protected:
 	std::string name;
 
 	Port* port;
+	Result* value;
 };

@@ -14,7 +14,7 @@ public:
 
 	std::string ToString() const override;
 	void Update(double value);
-	void Randomize(double min, double max);
+	void Randomize(double min, double max) override;
 
 protected:
 	double value;

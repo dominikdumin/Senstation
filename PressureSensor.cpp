@@ -17,14 +17,14 @@ std::string PressureSensor::Signature() const
 	return "PressureSensor";
 }
 
-DoubleResult * PressureSensor::Measure()
+Result * PressureSensor::Measure()
 {
 	srand(time(NULL));
 	value->Randomize(900.0, 1100.0);
 	return value;
 }
 
-DoubleResult * PressureSensor::GetValue()
+Result * PressureSensor::GetValue()
 {
 	return value;
 }
